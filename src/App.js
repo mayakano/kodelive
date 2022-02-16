@@ -1,9 +1,12 @@
 import "./App.css";
-import Filter from "./Filter.js";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <Filter/>
+    <div>
+          <img className="app-logo" alt="Logo" src="./Kodelive.png" />
+          <Home></Home>
+    </div>
   )
 }
 
