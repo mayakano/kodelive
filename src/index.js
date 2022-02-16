@@ -1,11 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import DailyIframe from "@daily-co/daily-js";
+import BrowserUnsupported from './components/BrowserUnsupported/BrowserUnsupported';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  DailyIframe.supportedBrowser().supported ? (
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  ) : (
+    <BrowserUnsupported />
+  ),
   document.getElementById("root")
 );
 
