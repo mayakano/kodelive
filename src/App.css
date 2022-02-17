@@ -3,14 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-body {
-  margin: 0 10px;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  color: white;
+* {
   background-color: black;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1500px;
 }
 
 
@@ -18,14 +21,13 @@ body {
   float: left;
   position: absolute;
   margin-top: 20px;
-  width: 20%;
-  padding-left: 5%;
+  width: 12%;
+  padding-left: 0px;
   padding-top: 2%;
 }
 
 .container {
   max-width: 100%;
-  margin-top:100px;
   display: grid;
   align-items: center;
   justify-content: center;

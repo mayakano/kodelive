@@ -12,7 +12,7 @@ function Menu({menuItem}) {
                         <div className="px-6 py-4">
                             <img className="w-32 h-32" src={item.image} alt="" />
                                 <h2 className="font-bold text-xl mb-2">{item.title}</h2>
-                                <p className="text-gray-600 text-base">{item.description}</p>
+                                {/* <p className="text-gray-600 text-base">{item.description}</p> */}
                             </div>
                         </div>
                     </div> 
