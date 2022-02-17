@@ -2,9 +2,10 @@ import "./App.css";
 import React, { useEffect, useState, useCallback } from 'react';
 import Live from "./components/Live";
 //importing the dummy data from our filtertag file
-import items from './filtertag';
+import items from './components/filtertag';
 import Menu from './components/Menu';
 import Button from './components/Button';
+import Navbar from "./components/Navbar";
 
 const allFilters = ['All', ...new Set(items.map(item => item.category))]
 
@@ -26,19 +27,11 @@ function App() {
 
   return (
     <div>
-          <img className="app-logo" alt="Logo" src="./Kodelive.png" />          
-          <div className="App">
-            <div className="title">
-              <h1>
-                
-                <span>Filter by programming language</span>
-              </h1>
-            </div>
-          </div>
+          <Navbar />
           {/* passing the dummy data as a prop so we can access it in the Menu component */}
-          <Menu menuItem={menuItem} />
           <Button button={buttons} filter={filter}/>
-          <Live></Live>
+          <Menu menuItem={menuItem} />
+          <Live />
     </div>
   )
 }
