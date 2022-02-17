@@ -97,8 +97,8 @@ const Live = ({list}) => {
   return (
     
 <div className='text-center'>
-    <h3 className='font-medium leading-tight text-2xl mt-10 mb-2 text-white-600'>Looking to help out? <br />
-    Select what you're good in</h3>
+    <h3 className='font-medium leading-tight text-3xl mt-10 mb-2 text-white-700'>Looking to help out? <br />
+    <span className='text-2xl'>Select your skills</span></h3>
       { 
         list.map((category, i)=> {
           return (
