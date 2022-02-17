@@ -4,6 +4,8 @@ import App from "./App";
 import DailyIframe from "@daily-co/daily-js";
 import BrowserUnsupported from './components/BrowserUnsupported/BrowserUnsupported';
 
+//using the daily.co boolean property 'supported' in this ternary function to find out if the browser is supported if not
+//the error handle component BrowserUnsupported will render it's message on the screen.
 
 ReactDOM.render(
   DailyIframe.supportedBrowser().supported ? (

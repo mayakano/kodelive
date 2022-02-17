@@ -26,11 +26,16 @@ const STATE_IDLE = 'STATE_IDLE';
 const STATE_JOINING = 'STATE_JOINING';
 const STATE_JOINED = 'STATE_JOINED';
 
-const Live = () => {
+const Live = ({list}) => {
     
   const [appState, setAppState] = useState(STATE_IDLE);
   const [roomUrl, setRoomUrl] = useState(null);
   const [callObject, setCallObject] = useState(null);
+  const [clickable, setClickable] = useState(false);
+
+  const optionSelected = (list) => {
+ 
+  }
   
   const createCall = useCallback(() => {
     return api
@@ -90,17 +95,40 @@ const Live = () => {
 
 
   return (
-    <div className="container">
-      <h3 className='py-5 font-medium leading-tight text-3xl mt-0 mb-2 text-white-600'>Looking to help?</h3>      
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={() => {
-          createCall().then((url) => startJoiningCall(url));
-        }}
-      >
-        Go Live
-      </button>
-    </div>
+    
+<div className='text-center'>
+    <h3 className='font-medium leading-tight text-2xl mt-10 mb-2 text-white-600'>Looking to help out? <br />
+    Select what you're good in</h3>
+      { 
+        list.map((category, i)=> {
+          return (
+              <button className='
+              place-self-center	
+              place-items-center
+              place-content-center	
+              px-2 mx-1.5 
+              bg-transparent 
+              hover:bg-blue-700 
+              text-white 
+              font-bold 
+              py-2 px-4 
+              rounded-full' 
+              type="button">{category}</button>
+        )})
+      }
+    <span className='container'>
+    {/* {optionSelected == true && */}
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded px-16 mt-6"
+            onClick={() => {
+              createCall().then((url) => startJoiningCall(url));
+            }}
+          >
+            Go Live
+          </button>
+  {/* } */}
+  </span>
+</div>
   );
 };
 
