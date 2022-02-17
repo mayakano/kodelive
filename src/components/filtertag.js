@@ -1,45 +1,51 @@
-import profile from '../img/profile.png';
+import dev6 from '../img/dev6.png';
+import dev5 from '../img/dev5.png';
+import dev4 from '../img/dev4.png';
+import dev3 from '../img/dev3.png';
+import dev2 from '../img/dev2.png';
+import dev1 from '../img/dev1.png';
+
 
 //dummy data in the form of objects in the array
 export default [
     {
         id: 1,
-        image: profile,
+        image: dev1,
         title: 'Python expert', 
         category: 'Python',
         description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
     },
     {
         id: 2,
-        image: profile,
+        image: dev2,
         title: 'Javascript expert', 
         category: 'Javascript',
         description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
     },
     {
         id: 3,
-        image: profile,
+        image: dev3,
         title: 'SQL expert', 
         category: 'SQL',
         description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
     },
     {
         id: 4,
-        image: profile,
+        image: dev4,
         title: 'Java expert', 
         category: 'Java',
         description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
     },
     {
         id: 5,
-        image: profile,
+        image: dev5,
         title: 'React expert', 
         category: 'React',
         description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
     },
     {
         id: 6,
-        image: profile,
+        image: dev6,
         title: 'React expert #2', 
         category: 'React',
         description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
