@@ -2,8 +2,8 @@ import React from 'react'
 
 function Button({button, filter}) {
   return (
-    <div>
-      <h3 className='font-medium leading-tight text-2xl mt-0 mb-2 text-white-600'>Looking for help? Filter by programming language</h3>
+    <div className='mt-64'>
+      <h3 className='font-medium leading-tight text-2xl mt-0 mb-2 text-white-600 mb-6'>Looking for help? Filter by programming language</h3>
       {
         button.map((category, i)=> {
           return (

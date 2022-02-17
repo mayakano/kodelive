@@ -8,6 +8,7 @@
   color: white;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
+  text-align: center;
 }
 
 body {
@@ -20,10 +21,10 @@ body {
 .app-logo {
   float: left;
   position: absolute;
-  margin-top: 20px;
-  width: 12%;
+  margin-top: 0px;
+  width: 9%;
   padding-left: 0px;
-  padding-top: 2%;
+  /* padding-top: 2%; */
 }
 
 .container {
