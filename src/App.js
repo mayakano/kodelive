@@ -54,7 +54,7 @@ function App() {
     <div>
       <Navbar />
       {/* passing the filter function as a prop so we can access it in the Button component */}
-      {/* <Button button={buttons} filter={filter} /> */}
+      <Button button={buttons} filter={filter} />
       {/* passing the dummy data as a prop so we can access it in the Menu component */}
       <Menu menuItem={menuItem} />
       <Live list={options} /> {/*passing the props for the new list here*/}

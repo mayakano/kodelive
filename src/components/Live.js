@@ -33,6 +33,24 @@ const Live = ({ list }) => {
   const [roomUrl, setRoomUrl] = useState(null);
   const [callObject, setCallObject] = useState(null);
   const [selected, setSelected] = useState(false);
+  const [selectedItems, setSelectedItems] = useState([]);
+  const setEnableGoLive = () => {
+    setSelected(true);
+  };
+
+  const handleSelectItem = (item) => {
+    console.log(item);
+    if (!selectedItems.includes(item)) {
+      setSelectedItems((items) => [...items, item]);
+      /**
+       * this is equivalent to
+       * const items = selectedItems
+       * setSelectedItems([...items, item])
+       */
+    } else {
+      setSelectedItems((items) => items.filter((i) => i !== item));
+    }
+  };
 
   const createCall = useCallback(() => {
     return api
@@ -48,10 +66,6 @@ const Live = ({ list }) => {
         setAppState(STATE_IDLE);
       });
   }, []);
-
-  const setEnableGoLive = () => {
-    setSelected(true);
-  };
 
   const startJoiningCall = useCallback((url) => {
     console.log("startJoiningCall url", url);
@@ -94,6 +108,7 @@ const Live = ({ list }) => {
   }, [callObject]);
 
   //this is where I'm rendering the selections that you see at the bottom Okay
+  console.log(selectedItems);
 
   return (
     <div className="text-center">
@@ -101,10 +116,31 @@ const Live = ({ list }) => {
         Looking to help out? <br />
         <span className="text-2xl">Select your skills</span>
       </h3>
-      {console.log(list)}
-      {/* {list.map((category, i) => { */}
-      {/* return (
-      <button
+      {list.map((item) => {
+        return (
+          <button
+            // key={}
+            onClick={() => handleSelectItem(item)}
+            key={item}
+            className={`
+              place-self-center	
+              place-items-center
+              place-content-center	
+              px-2 mx-1.5 
+              bg-transparent 
+              hover:bg-blue-700 
+              text-white 
+              font-bold 
+              py-2 px-4 
+              rounded-full
+              ${selectedItems.includes(item) ? " bg-sky-700" : ""}`}
+            type="button"
+          >
+            {item}
+          </button>
+        );
+      })}
+      {/* <button
         // key={}
         onClick={() => setEnableGoLive(true)}
         className="
@@ -119,16 +155,14 @@ const Live = ({ list }) => {
               py-2 px-4 
               rounded-full"
         type="button"
-      > */}
-      {list}
-      {list.map((category, i) => {
-        <button key={i}>{category}</button>;
-      })}
+      >
+        {list} */}
+      {/* </button> */}
       <span className="container">
         {/* {optionSelected == true && */}
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded px-16 mt-6"
-          disabled={!selected}
+          disabled={selectedItems.length === 0}
           onClick={() => {
             createCall().then((url) => startJoiningCall(url));
           }}
