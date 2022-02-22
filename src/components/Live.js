@@ -76,17 +76,6 @@ const Live = ({ list }) => {
     newCallObject.join({ url });
   }, []);
 
-  //   useEffect(() => {
-  //     const url = roomUrlFromPageUrl();
-  //     url && startJoiningCall(url);
-  //   }, [startJoiningCall]);
-
-  //   useEffect(() => {
-  //     const pageUrl = pageUrlFromRoomUrl(roomUrl);
-  //     if (pageUrl === window.location.href) return;
-  //     window.history.replaceState(null, null, pageUrl);
-  //   }, [roomUrl]);
-
   useEffect(() => {
     if (!callObject) return;
 
@@ -140,26 +129,7 @@ const Live = ({ list }) => {
           </button>
         );
       })}
-      {/* <button
-        // key={}
-        onClick={() => setEnableGoLive(true)}
-        className="
-              place-self-center	
-              place-items-center
-              place-content-center	
-              px-2 mx-1.5 
-              bg-transparent 
-              hover:bg-blue-700 
-              text-white 
-              font-bold 
-              py-2 px-4 
-              rounded-full"
-        type="button"
-      >
-        {list} */}
-      {/* </button> */}
       <span className="container">
-        {/* {optionSelected == true && */}
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded px-16 mt-6"
           disabled={selectedItems.length === 0}
@@ -169,7 +139,6 @@ const Live = ({ list }) => {
         >
           Go Live
         </button>
-        {/* } */}
       </span>
     </div>
   );
